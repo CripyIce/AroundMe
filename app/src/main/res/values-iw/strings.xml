@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AroundMe</string>
+    <string name="call">התקשר</string>
+    <string name="cancel">ביטול</string>
+    <string name="charging">בטעינה</string>
+    <string name="clear">מחיקה</string>
+    <string name="close">סגירה</string>
+    <string name="no_favorites">אין מועדפים!</string>
+    <string name="no_places_found">לא נמצאו מקומות!</string>
+    <string name="place_not_found">מקום לא נמצא</string>
+    <string name="places_around_you">מקומות סביבך</string>
+    <string name="pref_clear_fav">מחיקת מועדפים</string>
+    <string name="pref_clear_fav_message">כל המועדפים יימחקו!</string>
+    <string name="pref_clear_history">מחיקת היסטוריה</string>
+    <string name="pref_clear_history_message">כל ההיסטוריה תמחק!</string>
+    <string name="pref_distance_unit">יחידת מרחק</string>
+    <string name="pref_header_general">כללי</string>
+    <string name="pref_header_style">מראה</string>
+    <string name="pref_map_style">סגנון מפה</string>
+    <string name="pref_night_theme">מראה לילה</string>
+    <string name="price_text">מחיר: %1$s</string>
+    <string name="rate_text">דירוג: %1$s</string>
+    <string name="save">שמירה</string>
+    <string name="settings">הגדרות</string>
+    <string name="view_place_activity_title">פרטי מקום</string>
+    <string name="website">אתר אינטרנט</string>
+    <string name="favorites">מועדפים</string>
+    <string name="share">שיתוף</string>
+    <string name="hide">הסתר</string>
+    <string name="search_text">חיפוש מקום</string>
+    <string name="no_internet">אין חיבור אינטרנט!</string>
+    <string name="no_search_results">אין תוצאות חיפוש</string>
+
+    <string-array name="price_levels">
+        <item>חינם</item>
+        <item>לא יקר</item>
+        <item>בינוני</item>
+        <item>יקר</item>
+        <item>מאוד יקר</item>
+    </string-array>
+
+    <string-array name="place_longclick">
+        <item>שמירה</item>
+        <item>שיתוף</item>
+        <item>ביטול</item>
+    </string-array>
+
+    <string-array name="pref_distance_unit_titles">
+        <item>מטרים \\ קילומטרים</item>
+        <item>מיילים</item>
+    </string-array>
+    <string-array name="pref_distance_unit_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="pref_night_theme_titles">
+        <item>רגיל</item>
+        <item>לילה</item>
+        <item>כסוף</item>
+        <item>רטרו</item>
+        <item>חשוך</item>
+        <item>חציל</item>
+    </string-array>
+    <string-array name="pref_night_theme_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="daynight_theme"
+        android:title="@string/pref_night_theme" />
+
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/pref_night_theme_titles"
+        android:entryValues="@array/pref_night_theme_values"
+        android:key="map_style_list"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_map_style" />
+
+</PreferenceScreen>

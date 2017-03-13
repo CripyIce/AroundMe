@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#607D8B</color>
+    <color name="colorPrimaryDark">#455A64</color>
+    <color name="colorAccent">#6d7be3</color>
+    <color name="background">#181F2A</color>
+    <color name="buttonBack">#80455A64</color>
+    <color name="textColor">#ffffff</color>
+    <color name="textColorPrimary">#ffffff</color>
+    <color name="textColorPrimaryInverse">#000000</color>
+    <color name="textColorHint">#607D8B</color>
+    <color name="colorButtonNormal">#607D8B</color>
+    <color name="vectorFill">#6d7be3</color>
+    <color name="myLocationOn">#02abf9</color>
+    <color name="myLocationOff">#424242</color>
+    <color name="fabBack">#455A64</color>
+    <color name="settingsFill">#ffffff</color>
+    <color name="bottomSheetBackground">#111927</color>
+    <color name="bottomSheetTop">#111721</color>
+</resources>
