@@ -8,8 +8,8 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.constraint.ConstraintLayout;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -44,6 +44,10 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
     private List<PlacesModel> placesModelList;
     private SharedPreferences sharedPreferences;
     private String distanceUnitPref;
+
+    static {
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+    }
 
     class ViewHolder extends RecyclerView.ViewHolder {
         ViewHolder(View itemView) {
@@ -117,9 +121,9 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
                 final AroundViewHolder aroundViewHolder = (AroundViewHolder) holder;
 
                 if (placesModelList.get(position).isFav()) {
-                    aroundViewHolder.placeStarImageView.setImageDrawable(ResourcesCompat.getDrawable(context.getResources(), R.drawable.ic_star_on, null));
+                    aroundViewHolder.placeStarImageView.setImageResource(R.drawable.ic_star_on);
                 } else {
-                    aroundViewHolder.placeStarImageView.setImageDrawable(ResourcesCompat.getDrawable(context.getResources(), R.drawable.ic_star_off, null));
+                    aroundViewHolder.placeStarImageView.setImageResource(R.drawable.ic_star_off);
                 }
 
                 aroundViewHolder.placeNameTextView.setText(placesModelList.get(position).getName());
@@ -132,7 +136,7 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
                     @Override
                     public void onClick(View view) {
                         if (placesModelList.get(holder.getAdapterPosition()).isFav()) {
-                            aroundViewHolder.placeStarImageView.setImageDrawable(ResourcesCompat.getDrawable(context.getResources(), R.drawable.ic_star_off, null));
+                            aroundViewHolder.placeStarImageView.setImageResource(R.drawable.ic_star_off);
                             realm.executeTransaction(new Realm.Transaction() {
                                 @Override
                                 public void execute(Realm realm) {
@@ -154,7 +158,7 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
                             }, new Realm.Transaction.OnSuccess() {
                                 @Override
                                 public void onSuccess() {
-                                    aroundViewHolder.placeStarImageView.setImageDrawable(ResourcesCompat.getDrawable(context.getResources(), R.drawable.ic_star_on, null));
+                                    aroundViewHolder.placeStarImageView.setImageResource(R.drawable.ic_star_on);
                                     placesModelList.get(holder.getAdapterPosition()).setFav(true);
                                 }
                             });
@@ -214,7 +218,7 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
                                     public void onClick(DialogInterface dialog, int item) {
                                         if (item == 0) {
                                             if (placesModelList.get(holder.getAdapterPosition()).isFav()) {
-                                                aroundViewHolder.placeStarImageView.setImageDrawable(ResourcesCompat.getDrawable(context.getResources(), R.drawable.ic_star_off, null));
+                                                aroundViewHolder.placeStarImageView.setImageResource(R.drawable.ic_star_off);
                                                 realm.executeTransaction(new Realm.Transaction() {
                                                     @Override
                                                     public void execute(Realm realm) {
@@ -236,7 +240,7 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
                                                 }, new Realm.Transaction.OnSuccess() {
                                                     @Override
                                                     public void onSuccess() {
-                                                        aroundViewHolder.placeStarImageView.setImageDrawable(ResourcesCompat.getDrawable(context.getResources(), R.drawable.ic_star_on, null));
+                                                        aroundViewHolder.placeStarImageView.setImageResource(R.drawable.ic_star_on);
                                                         placesModelList.get(holder.getAdapterPosition()).setFav(true);
                                                     }
                                                 });

@@ -13,10 +13,10 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.ShareActionProvider;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -78,6 +78,10 @@ public class ViewPlaceActivity extends RuntimePermissionsActivity implements Goo
             placeViewRateTextView;
 
     CustomPagerAdapter customPagerAdapter;
+
+    static {
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -172,14 +176,14 @@ public class ViewPlaceActivity extends RuntimePermissionsActivity implements Goo
                                 phoneNumber = String.valueOf(myPlace.getPhoneNumber());
                             } else {
                                 callLL.setClickable(false);
-                                phoneImageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_phone_off));
+                                phoneImageView.setImageResource(R.drawable.ic_phone_off);
                             }
 
                             if (myPlace.getWebsiteUri() != null) {
                                 placeUrl = myPlace.getWebsiteUri().toString();
                             } else {
                                 urlLL.setClickable(false);
-                                websiteImageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_website_off));
+                                websiteImageView.setImageResource(R.drawable.ic_website_off);
                             }
 
                             int priceLvl = myPlace.getPriceLevel();
@@ -238,9 +242,9 @@ public class ViewPlaceActivity extends RuntimePermissionsActivity implements Goo
 
     private void checkIsFav() {
         if (isFav) {
-            starPlaceImageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_star_on_big));
+            starPlaceImageView.setImageResource(R.drawable.ic_star_on_big);
         } else {
-            starPlaceImageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_star_off_big));
+            starPlaceImageView.setImageResource(R.drawable.ic_star_off_big);
         }
     }
 
@@ -410,7 +414,7 @@ public class ViewPlaceActivity extends RuntimePermissionsActivity implements Goo
             galleryImageView = (ImageView) itemView.findViewById(R.id.galleryImageView);
 
             if (bitmapList.size() == 0) {
-                galleryImageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nophoto));
+                galleryImageView.setImageResource(R.drawable.nophoto);
                 indicator.setVisibility(View.GONE);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     placeViewPager.setElevation(0);
